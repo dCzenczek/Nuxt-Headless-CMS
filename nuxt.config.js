@@ -1,3 +1,5 @@
+import localConfig from './local.js'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,6 +16,12 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  env: {
+    contentfulSpace: process.env.CONTENTFUL_SPACE || localConfig.env.contentfulSpace || '',
+    contentfulEnv: process.env.CONTENTFUL_ENV || localConfig.env.contentfulEnv || '',
+    contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || ''
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -56,7 +64,9 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://cdn.contentful.com'
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
