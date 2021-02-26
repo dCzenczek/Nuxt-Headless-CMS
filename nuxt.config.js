@@ -21,7 +21,8 @@ export default {
   env: {
     contentfulSpace: process.env.CONTENTFUL_SPACE || localConfig.env.contentfulSpace || '',
     contentfulEnv: process.env.CONTENTFUL_ENV || localConfig.env.contentfulEnv || '',
-    contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || ''
+    contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || '',
+    pageContentModel: process.env.CONTENTFUL_PAGE_CONTENT_MODEL || localConfig.env.pageContentModel || ''
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

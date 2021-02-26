@@ -8,24 +8,25 @@
 
 <script>
 import config from '@/nuxt.config'
+import { createClient } from '@/plugins/contentful'
 
 export default {
   name: 'CMSPage',
 
-  async asyncData ({ app, $axios, route, error }) {
-    const url = `/spaces/${process.env.contentfulSpace}/environments/${process.env.contentfulEnv}/entries?` +
-      `content_type=page&fields.slug=${route.params.slug}` +
-      `&access_token=${process.env.contentfulToken}` +
-      `&locale=${app.i18n.localeProperties.iso}`
+  async asyncData ({ app, env, error }) {
+    const client = createClient()
 
-    const { data } = await $axios.get(url)
+    const entries = await client.getEntries({
+      content_type: env.pageContentModel,
+      locale: app.i18n.localeProperties.iso
+    })
 
-    if (data.total <= 0) { error({ statusCode: 404, message: 'Page not found' }) }
+    if (!entries.total) { error({ statusCode: 404, message: 'Page not found' }) }
 
     return {
-      metaTitle: data.items[0]?.fields?.metaTitle,
-      metaDescription: data.items[0]?.fields?.metaDescription,
-      entries: data.includes?.Entry
+      metaTitle: entries.items[0]?.fields?.metaTitle,
+      metaDescription: entries.items[0]?.fields?.metaDescription,
+      entries: entries.includes?.Entry
     }
   },
 
