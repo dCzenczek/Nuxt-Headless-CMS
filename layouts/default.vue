@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader'
+import AppHeader from '@/components/layout/AppHeader'
 
 export default {
   components: {
