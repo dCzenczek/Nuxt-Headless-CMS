@@ -1,32 +1,47 @@
 <template>
-  <section>
-    {{ metaTitle }}
-    {{ metaDescription }}
-    {{ entries }}
-  </section>
+  <article>
+    <PageHeader :title="header.title" :background-image="header.backgroundImage" />
+
+    <template v-for="contentBlock in contentBlocks">
+      <component :is="contentBlock.component" :key="contentBlock.name" v-bind="contentBlock.props" />
+    </template>
+  </article>
 </template>
 
 <script>
 import config from '@/nuxt.config'
 import { createClient } from '@/plugins/contentful'
+import CMSMixin from '@/mixins/CMSMixin'
+
+import PageHeader from '@/components/cms/PageHeader'
 
 export default {
   name: 'CMSPage',
 
-  async asyncData ({ app, env, error }) {
+  components: {
+    PageHeader
+  },
+
+  mixins: [CMSMixin],
+
+  async asyncData ({ app, env, route, error }) {
     const client = createClient()
 
     const entries = await client.getEntries({
       content_type: env.pageContentModel,
-      locale: app.i18n.localeProperties.iso
+      locale: app.i18n.localeProperties.iso,
+      include: env.contentfulIncludeLevel
     })
 
-    if (!entries.total) { error({ statusCode: 404, message: 'Page not found' }) }
+    const page = entries.items.find(entry => entry.fields.slug === route.params.slug)
+
+    if (!page) { error({ statusCode: 404 }) }
 
     return {
-      metaTitle: entries.items[0]?.fields?.metaTitle,
-      metaDescription: entries.items[0]?.fields?.metaDescription,
-      entries: entries.includes?.Entry
+      metaTitle: page?.fields?.metaTitle,
+      metaDescription: page?.fields?.metaDescription,
+      pageHeader: page?.fields?.header,
+      content: page?.fields?.sections
     }
   },
 

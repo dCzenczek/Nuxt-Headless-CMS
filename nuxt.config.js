@@ -22,11 +22,13 @@ export default {
     contentfulSpace: process.env.CONTENTFUL_SPACE || localConfig.env.contentfulSpace || '',
     contentfulEnv: process.env.CONTENTFUL_ENV || localConfig.env.contentfulEnv || '',
     contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || '',
-    pageContentModel: process.env.CONTENTFUL_PAGE_CONTENT_MODEL || localConfig.env.pageContentModel || ''
+    pageContentModel: process.env.CONTENTFUL_PAGE_CONTENT_MODEL || localConfig.env.pageContentModel || '',
+    contentfulIncludeLevel: process.env.CONTENTFUL_INCLUDE_LEVEL || 5
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/main'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -72,6 +74,12 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      font: {
+        family: 'Quicksand'
+      }
+    },
+    treeShake: true,
     theme: {
       dark: false,
       themes: {}
