@@ -23,7 +23,8 @@ export default {
     contentfulEnv: process.env.CONTENTFUL_ENV || localConfig.env.contentfulEnv || '',
     contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || '',
     pageContentModel: process.env.CONTENTFUL_PAGE_CONTENT_MODEL || localConfig.env.pageContentModel || '',
-    contentfulIncludeLevel: process.env.CONTENTFUL_INCLUDE_LEVEL || 5
+    configContentModel: process.env.CONTENTFUL_CONFIG_CONTENT_MODEL || localConfig.env.configContentModel || '',
+    contentfulIncludeLevel: process.env.CONTENTFUL_INCLUDE_LEVEL || 10
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
