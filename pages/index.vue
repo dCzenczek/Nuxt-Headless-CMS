@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { createClient } from '@/plugins/contentful'
 import CMSMixin from '@/mixins/CMSMixin'
 import PageHeader from '@/components/cms/PageHeader'
 
@@ -22,26 +22,32 @@ export default {
 
   mixins: [CMSMixin],
 
-  head () {
+  async asyncData ({ app, env, route, error }) {
+    const client = createClient()
+
+    const entries = await client.getEntries({
+      content_type: env.pageContentModel,
+      locale: app.i18n.localeProperties.code,
+      include: env.contentfulIncludeLevel
+    })
+    const page = entries.items.find(entry => entry.fields.name === env.homePageId)
+
+    if (!page) { error({ statusCode: 404 }) }
+
     return {
-      title: this.homePage.metaTitle,
-      meta: [
-        { hid: 'description', name: 'description', content: this.homePage.metaDescription }
-      ]
+      metaTitle: page?.fields?.metaTitle,
+      metaDescription: page?.fields?.metaDescription,
+      pageHeader: page?.fields?.header,
+      content: page?.fields?.sections
     }
   },
 
-  computed: {
-    ...mapState({
-      homePage: state => state.config.homePage
-    }),
-
-    pageHeader () {
-      return this.homePage.header
-    },
-
-    content () {
-      return this.homePage.sections
+  head () {
+    return {
+      title: this.metaTitle,
+      meta: [
+        { hid: 'description', name: 'description', content: this.metaDescription }
+      ]
     }
   }
 }

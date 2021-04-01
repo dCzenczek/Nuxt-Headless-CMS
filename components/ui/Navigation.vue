@@ -3,7 +3,7 @@
     <v-btn
       v-for="route in routes"
       :key="route.path"
-      :to="`/${route.path}`"
+      :to="localePath(`/${route.path}`)"
       nuxt
       exact
       text

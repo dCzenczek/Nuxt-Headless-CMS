@@ -4,10 +4,7 @@
     elevate-on-scroll
     dark
   >
-    <nuxt-link to="/" exact class="home-page-navigation">
-      <img class="mx-3" :src="logo" alt="logo">
-      {{ pageName }}
-    </nuxt-link>
+    <PageLogo />
 
     <v-spacer />
 
@@ -20,35 +17,15 @@
 <script>
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 import Navigation from '@/components/ui/Navigation'
-import { mapGetters, mapState } from 'vuex'
+import PageLogo from '@/components/ui/PageLogo'
 
 export default {
   name: 'AppHeader',
 
   components: {
     LanguageSwitcher,
-    Navigation
-  },
-
-  computed: {
-    ...mapState({
-      pageName: state => state.config.pageName
-    }),
-    ...mapGetters({
-      homePageRoute: 'config/getHomePageRoute',
-      logo: 'config/getLogo'
-    })
+    Navigation,
+    PageLogo
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.home-page-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: white;
-}
-</style>

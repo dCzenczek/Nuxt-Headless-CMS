@@ -1,7 +1,6 @@
 import { createClient } from '@/plugins/contentful'
 
 export const state = () => ({
-  homePage: null,
   routes: null,
   logo: null,
   pageIcon: null,
@@ -17,23 +16,12 @@ export const getters = {
     return state.logo.file.url + '?w=50&h=50'
   },
 
-  getHomePageRoute (state) {
-    return {
-      name: state.homePage.title,
-      path: state.homePage.slug
-    }
-  },
-
   getRoutes (state) {
     return state.routes.map(route => ({ path: route.slug, name: route.title }))
   }
 }
 
 export const mutations = {
-  SET_HOME_PAGE (state, payload) {
-    state.homePage = payload
-  },
-
   SET_ROUTES (state, payload) {
     state.routes = payload
   },
@@ -61,9 +49,8 @@ export const actions = {
 
     if (!entries.total) { return }
 
-    const { homePage, routing, logo, pageIcon, pageName } = entries.items[0].fields
+    const { routing, logo, pageIcon, pageName } = entries.items[0].fields
 
-    commit('SET_HOME_PAGE', homePage.fields)
     commit('SET_ROUTES', routing.map(page => page.fields))
     commit('SET_LOGO', logo.fields)
     commit('SET_PAGE_ICON', pageIcon.fields)

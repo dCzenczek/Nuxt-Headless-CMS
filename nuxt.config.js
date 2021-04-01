@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s',
     title: 'Nuxt Headless CMS',
     htmlAttrs: {
-      lang: 'en-GB'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
@@ -24,7 +24,8 @@ export default {
     contentfulToken: process.env.CONTENTFUL_TOKEN || localConfig.env.contentfulToken || '',
     pageContentModel: process.env.CONTENTFUL_PAGE_CONTENT_MODEL || localConfig.env.pageContentModel || '',
     configContentModel: process.env.CONTENTFUL_CONFIG_CONTENT_MODEL || localConfig.env.configContentModel || '',
-    contentfulIncludeLevel: process.env.CONTENTFUL_INCLUDE_LEVEL || 10
+    contentfulIncludeLevel: process.env.CONTENTFUL_INCLUDE_LEVEL || 10,
+    homePageId: process.env.HOME_PAGE_ID || localConfig.env.homePageId || ''
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -55,15 +56,16 @@ export default {
   ],
 
   i18n: {
-    locales: [
-      {
-        code: 'gb',
-        iso: 'en-GB'
-      }
-    ],
-    defaultLocale: 'gb',
+    locales: [{
+      code: 'en',
+      iso: 'gb'
+    }, {
+      code: 'pl',
+      iso: 'pl'
+    }],
+    defaultLocale: 'en',
     vueI18n: {
-      fallbackLocale: 'gb'
+      fallbackLocale: 'en'
     }
   },
 
