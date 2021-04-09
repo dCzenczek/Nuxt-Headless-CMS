@@ -5,9 +5,16 @@
         {{ title }}
       </h1>
 
-      <template v-for="contentBlock in contentBlocks">
-        <component :is="contentBlock.component" :key="contentBlock.name" v-bind="contentBlock.props" />
-      </template>
+      <div
+        v-for="contentBlock in contentBlocks"
+        :key="contentBlock.name"
+        class="mb-5"
+      >
+        <component
+          :is="contentBlock.component"
+          v-bind="contentBlock.props"
+        />
+      </div>
     </v-container>
   </v-card>
 </template>

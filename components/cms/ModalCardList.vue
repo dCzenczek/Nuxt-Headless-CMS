@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-card-list mb-5">
+  <div class="modal-card-list">
     <h2 class="text-center">
       {{ title }}
     </h2>

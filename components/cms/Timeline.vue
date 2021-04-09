@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline mb-5">
+  <div class="timeline">
     <h2 v-if="title" class="text-center mb-3">
       {{ title }}
     </h2>

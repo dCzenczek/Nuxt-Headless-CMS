@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-card pa-3">
+  <div class="modal-card">
     <v-dialog
       v-model="dialog"
       width="500"

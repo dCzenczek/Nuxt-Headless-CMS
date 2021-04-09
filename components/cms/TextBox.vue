@@ -1,5 +1,5 @@
 <template>
-  <div class="text-box text-justify mb-5">
+  <div class="text-box text-justify">
     {{ description }}
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="icon-list mb-5">
+  <div class="icon-list">
     <h2 v-if="title" class="text-center mb-3">
       {{ title }}
     </h2>
