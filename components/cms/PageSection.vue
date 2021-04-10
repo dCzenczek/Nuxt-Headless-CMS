@@ -1,9 +1,9 @@
 <template>
   <v-card tag="section" class="page-section mb-10" :dark="theme === 'dark'" flat tile>
     <v-container>
-      <h1 class="text-center mb-5">
+      <h2 class="text-center mb-5">
         {{ title }}
-      </h1>
+      </h2>
 
       <div
         v-for="contentBlock in contentBlocks"
@@ -52,10 +52,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~vuetify/src/styles/settings/_variables';
+
 .page-section {
-  h1 {
+  h2 {
     font-size: 3rem;
     font-weight: 300;
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      font-size: 2rem;
+    }
   }
 }
 </style>
