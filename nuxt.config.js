@@ -33,6 +33,11 @@ export default {
     '~/assets/css/main'
   ],
 
+  loading: {
+    color: '#f0db4f',
+    height: '2px'
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
@@ -63,6 +68,7 @@ export default {
       code: 'pl',
       iso: 'pl'
     }],
+    seo: true,
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',
@@ -70,12 +76,20 @@ export default {
         en: {
           homePage: 'Home page',
           siteMap: 'Site map',
-          getInTouch: 'Get in touch'
+          getInTouch: 'Get in touch',
+          pageNotFoundTitle: 'Page not found!',
+          pageNotFoundMessage: 'The page that you\'re looking for was not found.',
+          otherErrorTitle: 'Oops, something\'s gone wrong!',
+          otherErrorMessage: 'It\'s not you - it\'s us. Sorry for that.'
         },
         pl: {
           homePage: 'Strona główna',
           siteMap: 'Mapa strony',
-          getInTouch: 'Pozostańmy w kontakcie'
+          getInTouch: 'Pozostańmy w kontakcie',
+          pageNotFoundTitle: 'Nie ma takiej strony!',
+          pageNotFoundMessage: 'Wybacz, ale nie znaleźlismy strony, której szukasz.',
+          otherErrorTitle: 'Ups, coś poszło nie tak!',
+          otherErrorMessage: 'To nie ty - to my. Wybacz.'
         }
       }
     }
