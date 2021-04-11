@@ -10,9 +10,6 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -62,9 +59,6 @@ export default {
     locales: [{
       code: 'en',
       iso: 'gb'
-    }, {
-      code: 'pl',
-      iso: 'pl'
     }],
     seo: true,
     defaultLocale: 'en',
@@ -79,15 +73,6 @@ export default {
           pageNotFoundMessage: 'The page that you\'re looking for was not found.',
           otherErrorTitle: 'Oops, something\'s gone wrong!',
           otherErrorMessage: 'It\'s not you - it\'s us. Sorry for that.'
-        },
-        pl: {
-          homePage: 'Strona główna',
-          siteMap: 'Mapa strony',
-          getInTouch: 'Pozostańmy w kontakcie',
-          pageNotFoundTitle: 'Nie ma takiej strony!',
-          pageNotFoundMessage: 'Wybacz, ale nie znaleźlismy strony, której szukasz.',
-          otherErrorTitle: 'Ups, coś poszło nie tak!',
-          otherErrorMessage: 'To nie ty - to my. Wybacz.'
         }
       }
     }
@@ -115,7 +100,6 @@ export default {
           primary: '#f0db4f',
           secondary: '#323330',
           info: '#2196F3',
-          anchor: '#f0db4f',
 
           // Backgrounds
           lightBackground: '#ffffff',
