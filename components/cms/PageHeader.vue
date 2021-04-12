@@ -41,6 +41,8 @@ export default {
   }
 
   h1 {
+    margin: auto;
+    max-width: 1140px;
     font-size: 5rem;
     color: white;
     font-weight: 300;
