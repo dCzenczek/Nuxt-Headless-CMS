@@ -1,10 +1,12 @@
 <template>
   <header class="page-header mb-5">
-    <v-parallax :src="backgroundImage" :height="$vuetify.breakpoint.smAndDown ? 350 : 500">
-      <h1 class="text-center">
-        {{ title }}
-      </h1>
-    </v-parallax>
+    <v-container class="pa-0">
+      <v-parallax :src="`${backgroundImage}?w=1440`">
+        <h1 class="text-center px-10">
+          {{ title }}
+        </h1>
+      </v-parallax>
+    </v-container>
   </header>
 </template>
 
