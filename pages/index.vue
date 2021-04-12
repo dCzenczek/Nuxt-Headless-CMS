@@ -1,6 +1,10 @@
 <template>
   <section id="home-page">
-    <PageHeader :title="header.title" :background-image="header.backgroundImage" />
+    <PageHeader
+      :title="header.title"
+      :background-image="header.backgroundImage"
+      :background-color="header.backgroundColor"
+    />
 
     <div class="main-content">
       <component
