@@ -8,7 +8,7 @@
       color="primary"
       rounded
       outlined
-      x-large
+      large
     >
       {{ text }}
     </v-btn>
@@ -50,7 +50,7 @@ export default {
   text-align: center;
 
   a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 </style>
