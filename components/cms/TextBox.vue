@@ -28,9 +28,5 @@ export default {
 <style lang="scss" scoped>
 .text-box {
   width: 100%;
-
-  pre {
-    overflow: auto;
-  }
 }
 </style>
