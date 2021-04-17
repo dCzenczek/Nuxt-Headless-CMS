@@ -1,7 +1,7 @@
 <template>
   <v-card
     tag="section"
-    class="page-section py-10"
+    class="page-section py-5"
     :class="{ 'dark-theme': theme === 'dark' }"
     :dark="theme === 'dark'"
     flat
