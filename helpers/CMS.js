@@ -100,7 +100,8 @@ export function parseCMSBlock (contentBlock) {
         props: {
           text: contentBlock.fields?.text,
           type: contentBlock.fields?.type,
-          slug: contentBlock.fields?.page?.fields?.slug
+          slug: contentBlock.fields?.page?.fields?.slug,
+          parentPageSlug: contentBlock.fields?.page?.fields?.parentPage?.fields?.slug
         }
       }
     default:
