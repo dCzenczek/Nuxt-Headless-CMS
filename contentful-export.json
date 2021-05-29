@@ -256,7 +256,7 @@
         "id": "timelineItem",
         "type": "ContentType",
         "createdAt": "2021-04-10T15:24:48.184Z",
-        "updatedAt": "2021-04-15T21:27:22.785Z",
+        "updatedAt": "2021-05-10T18:24:23.119Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -264,8 +264,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 11,
-        "publishedAt": "2021-04-15T21:27:22.785Z",
+        "publishedVersion": 13,
+        "publishedAt": "2021-05-10T18:24:23.119Z",
         "firstPublishedAt": "2021-04-10T15:24:56.150Z",
         "createdBy": {
           "sys": {
@@ -281,8 +281,8 @@
             "id": "0xtQf19pcoNQhr5JWKAjAC"
           }
         },
-        "publishedCounter": 6,
-        "version": 12,
+        "publishedCounter": 7,
+        "version": 14,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -325,7 +325,7 @@
           "name": "Subtitle",
           "type": "Symbol",
           "localized": true,
-          "required": true,
+          "required": false,
           "validations": [
           ],
           "disabled": false,
@@ -1299,7 +1299,7 @@
         "id": "modalCardList",
         "type": "ContentType",
         "createdAt": "2021-04-10T15:24:48.991Z",
-        "updatedAt": "2021-04-15T21:27:14.482Z",
+        "updatedAt": "2021-04-20T18:11:42.492Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1307,8 +1307,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 11,
-        "publishedAt": "2021-04-15T21:27:14.482Z",
+        "publishedVersion": 15,
+        "publishedAt": "2021-04-20T18:11:42.492Z",
         "firstPublishedAt": "2021-04-10T15:24:54.655Z",
         "createdBy": {
           "sys": {
@@ -1324,8 +1324,8 @@
             "id": "0xtQf19pcoNQhr5JWKAjAC"
           }
         },
-        "publishedCounter": 6,
-        "version": 12,
+        "publishedCounter": 8,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1546,7 +1546,7 @@
         "id": "blog",
         "type": "ContentType",
         "createdAt": "2021-04-12T17:42:59.498Z",
-        "updatedAt": "2021-04-15T21:27:13.148Z",
+        "updatedAt": "2021-05-09T12:29:41.428Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1554,8 +1554,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 11,
-        "publishedAt": "2021-04-15T21:27:13.148Z",
+        "publishedVersion": 15,
+        "publishedAt": "2021-05-09T12:29:41.428Z",
         "firstPublishedAt": "2021-04-12T17:42:59.998Z",
         "createdBy": {
           "sys": {
@@ -1571,8 +1571,8 @@
             "id": "0xtQf19pcoNQhr5JWKAjAC"
           }
         },
-        "publishedCounter": 6,
-        "version": 12,
+        "publishedCounter": 8,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1601,10 +1601,10 @@
         },
         {
           "id": "pages",
-          "name": "pages",
+          "name": "Pages",
           "type": "Array",
           "localized": false,
-          "required": false,
+          "required": true,
           "validations": [
           ],
           "disabled": false,
@@ -1882,7 +1882,7 @@
             "linkType": "Space"
           }
         },
-        "version": 12,
+        "version": 14,
         "createdAt": "2021-04-10T15:24:56.221Z",
         "createdBy": {
           "sys": {
@@ -1891,7 +1891,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-04-15T21:27:24.446Z",
+        "updatedAt": "2021-05-10T18:24:23.736Z",
         "updatedBy": {
           "sys": {
             "id": "0xtQf19pcoNQhr5JWKAjAC",
@@ -2491,7 +2491,7 @@
             "linkType": "Space"
           }
         },
-        "version": 12,
+        "version": 16,
         "createdAt": "2021-04-10T15:24:54.750Z",
         "createdBy": {
           "sys": {
@@ -2500,7 +2500,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-04-15T21:27:28.741Z",
+        "updatedAt": "2021-04-20T18:11:43.137Z",
         "updatedBy": {
           "sys": {
             "id": "0xtQf19pcoNQhr5JWKAjAC",
@@ -2638,7 +2638,7 @@
             "linkType": "Space"
           }
         },
-        "version": 12,
+        "version": 16,
         "createdAt": "2021-04-12T17:43:00.156Z",
         "createdBy": {
           "sys": {
@@ -2647,7 +2647,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2021-04-15T21:27:29.097Z",
+        "updatedAt": "2021-05-09T12:29:42.042Z",
         "updatedBy": {
           "sys": {
             "id": "0xtQf19pcoNQhr5JWKAjAC",
