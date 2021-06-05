@@ -75,7 +75,7 @@ export function parseCMSBlock (contentBlock) {
         props: {
           title: contentBlock.fields?.title,
           subtitle: contentBlock.fields?.subtitle,
-          modalCards: contentBlock.fields?.modalCards.map(modalCard => ({
+          modalCards: (contentBlock.fields?.modalCards || []).map(modalCard => ({
             name: modalCard.fields?.name,
             title: modalCard.fields?.title,
             description: modalCard.fields?.description,
